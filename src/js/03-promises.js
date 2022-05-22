@@ -17,9 +17,9 @@ function onFormSubmit(evt) {
   const delayStepValue = Number(refs.delayStep.value);
   const amountValue = Number(refs.amount.value);
 
-  let delay = firstDelayValue-delayStepValue;
+  let delay = firstDelayValue - delayStepValue;
 
-  for (let i = 1; i < amountValue; i += 1) {
+  for (let i = 1; i <= amountValue; i += 1) {
     delay += delayStepValue;
     createPromise(i, delay)
       .then(({ position, delay }) => { onFulfilled({ position, delay }) })
