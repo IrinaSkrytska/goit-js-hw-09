@@ -2,9 +2,9 @@
 import flatpickr from "flatpickr";
 // Дополнительный импорт стилей
 import "flatpickr/dist/flatpickr.min.css";
-import Notiflix from "notiflix";
 // Библиотка Notiflix
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import Notiflix from 'notiflix';
+
 
 const startBtn = document.querySelector('button[data-start]');
 const dataDays = document.querySelector('span[data-days]');
@@ -65,7 +65,7 @@ function onInputCheck() {
     let dateNowMs = dateNow.getTime();
 
     if (dateMs < dateNowMs) {
-      Notiflix.Notify.failurefailure("Please choose a date in the future");
+      Notiflix.Notify.failure("Please choose a date in the future");
         changeBtn(false,true);
     } else {
         changeBtn(false,false);
